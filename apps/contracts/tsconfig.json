@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@latampay/types": ["../../packages/types/src"],
+      "@latampay/config": ["../../packages/config"]
+    }
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "dist", "cache", "artifacts"]
+}
+

@@ -1,0 +1,27 @@
+{
+  "name": "@latampay/docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LatamPay Documentation",
+  "scripts": {
+    "build": "docusaurus build",
+    "dev": "docusaurus start",
+    "start": "docusaurus start",
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf build .docusaurus"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.1.0",
+    "@docusaurus/preset-classic": "^3.1.0",
+    "@mdx-js/react": "^3.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@latampay/config": "workspace:*",
+    "@types/react": "^18.2.48",
+    "typescript": "^5.3.3"
+  }
+}
+
