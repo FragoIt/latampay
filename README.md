@@ -26,22 +26,26 @@ latampay/
 ## 📦 Instalación
 
 1. **Instalar pnpm** (si no lo tienes):
+
 ```bash
 npm install -g pnpm@8.15.0
 ```
 
 2. **Clonar el repositorio** (si aplica):
+
 ```bash
 git clone <repository-url>
 cd latampay
 ```
 
 3. **Instalar dependencias**:
+
 ```bash
 pnpm install
 ```
 
 4. **Generar cliente de Prisma** (para la API):
+
 ```bash
 cd apps/api
 pnpm db:generate
@@ -62,6 +66,7 @@ cd ../..
 ### Scripts por aplicación:
 
 #### Contracts (`apps/contracts`)
+
 - `pnpm build` - Compila los smart contracts
 - `pnpm dev` - Inicia Hardhat node local
 - `pnpm lint` - Ejecuta ESLint
@@ -69,6 +74,7 @@ cd ../..
 - `pnpm clean` - Limpia los archivos compilados
 
 #### SDK (`apps/sdk`)
+
 - `pnpm build` - Construye el SDK (CJS + ESM)
 - `pnpm dev` - Modo watch para desarrollo
 - `pnpm lint` - Ejecuta ESLint
@@ -76,6 +82,7 @@ cd ../..
 - `pnpm clean` - Limpia el directorio dist
 
 #### API (`apps/api`)
+
 - `pnpm build` - Compila TypeScript
 - `pnpm dev` - Ejecuta en modo desarrollo con hot reload
 - `pnpm start` - Ejecuta la versión compilada
@@ -87,6 +94,7 @@ cd ../..
 - `pnpm clean` - Limpia el directorio dist
 
 #### Dashboard (`apps/dashboard`)
+
 - `pnpm build` - Construye la aplicación Next.js
 - `pnpm dev` - Ejecuta en modo desarrollo (puerto 3000)
 - `pnpm start` - Ejecuta la versión de producción
@@ -95,6 +103,7 @@ cd ../..
 - `pnpm clean` - Limpia .next y out
 
 #### Docs (`apps/docs`)
+
 - `pnpm build` - Construye la documentación estática
 - `pnpm dev` - Ejecuta Docusaurus en modo desarrollo
 - `pnpm start` - Ejecuta Docusaurus
@@ -157,11 +166,13 @@ El monorepo usa ESLint y Prettier para mantener la consistencia del código:
   - Archivos ignorados en `.prettierignore`
 
 Para formatear el código:
+
 ```bash
 pnpm format
 ```
 
 Para verificar linting:
+
 ```bash
 pnpm lint
 ```
@@ -253,6 +264,66 @@ latampay/
 ├── tsconfig.json       # Configuración base de TypeScript
 └── package.json        # Scripts y dependencias del root
 ```
+
+---
+
+## 📋 Documentación Estratégica
+
+Este monorepo incluye documentación completa para la ejecución del proyecto:
+
+### 🎯 Plan Maestro
+
+- **[MASTER_PLAN.md](./MASTER_PLAN.md)** - Plan integral de ejecución (Score 6.6 → 8.0)
+  - Análisis conceptual completo
+  - Modelo de monetización multi-capa
+  - Timeline 12 meses: 0 → $100K MRR
+  - Unit economics y proyecciones
+
+### 🚀 Go-To-Market
+
+- **[GTM_STRATEGY.md](./GTM_STRATEGY.md)** - Estrategia comercial 0→100 merchants
+  - ICP ultra-específico (Agencias LATAM 5-30 personas)
+  - Design Partners: 10 contratos con charter
+  - Embudo conversión cuantificado
+  - Scripts: Outbound, Demo, Email nurture
+  - Canales: LinkedIn, Webinars, Referral
+
+### 🛠️ Product Roadmap
+
+- **[PRODUCT_ROADMAP.md](./PRODUCT_ROADMAP.md)** - Roadmap técnico sin feature sprawl
+  - Versioning: V0 (MVP) → V4 (Enterprise)
+  - Impact Score framework
+  - Feature specs: Fiscal, Subscriptions, White-label
+  - Anti-sprawl rules: Max 2 frentes complejos
+
+### 📊 Métricas & Tracking
+
+- **[METRICS_TRACKING.md](./METRICS_TRACKING.md)** - Dashboard y OKRs
+  - North Star: MAP, MRR, GMV
+  - Weekly tracking template
+  - Red flags & umbrales decisionales
+  - OKRs Q4 2025 - Q4 2026
+  - Unit economics calculators
+
+### 🔧 Implementación Técnica
+
+- **[IMPLEMENTATION_PLAN_PERMIT.md](./IMPLEMENTATION_PLAN_PERMIT.md)** - Plan EIP-2612 One-Click Pay
+- **[RESUMEN_PLAN_PERMIT.md](./RESUMEN_PLAN_PERMIT.md)** - Resumen ejecutivo (español)
+- **[QUICK_REFERENCE_PERMIT.md](./QUICK_REFERENCE_PERMIT.md)** - Referencia rápida
+- **[INDEX_PLAN_PERMIT.md](./INDEX_PLAN_PERMIT.md)** - Índice navegación
+
+---
+
+## 🎯 Quickstart Estratégico
+
+Si eres nuevo en el proyecto, lee en este orden:
+
+1. **[MASTER_PLAN.md](./MASTER_PLAN.md)** - Visión general y estrategia
+2. **[GTM_STRATEGY.md](./GTM_STRATEGY.md)** - Cómo adquirir primeros 100 merchants
+3. **[PRODUCT_ROADMAP.md](./PRODUCT_ROADMAP.md)** - Qué construir y cuándo
+4. Este README - Setup técnico del monorepo
+
+---
 
 ## 🤝 Contribuir
 
