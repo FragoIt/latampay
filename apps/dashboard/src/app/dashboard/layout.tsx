@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -66,8 +68,8 @@ export default function DashboardLayout({
                   href={item.href}
                   onClick={() => setSidebarOpen(false)}
                   className={`${isActive
-                      ? 'bg-amber-500/20 text-amber-400 border-l-2 border-amber-400'
-                      : 'text-neutral-300 hover:bg-neutral-800 hover:text-white border-l-2 border-transparent'
+                    ? 'bg-amber-500/20 text-amber-400 border-l-2 border-amber-400'
+                    : 'text-neutral-300 hover:bg-neutral-800 hover:text-white border-l-2 border-transparent'
                     } flex items-center px-3 py-2.5 text-sm font-medium rounded-r-md transition-all duration-150`}
                 >
                   <span className="mr-3">{item.icon}</span>
@@ -98,8 +100,8 @@ export default function DashboardLayout({
                       key={item.name}
                       href={item.href}
                       className={`${isActive
-                          ? 'bg-amber-500/15 text-amber-400 border-l-2 border-amber-400'
-                          : 'text-neutral-400 hover:bg-neutral-800 hover:text-neutral-200 border-l-2 border-transparent'
+                        ? 'bg-amber-500/15 text-amber-400 border-l-2 border-amber-400'
+                        : 'text-neutral-400 hover:bg-neutral-800 hover:text-neutral-200 border-l-2 border-transparent'
                         } flex items-center px-3 py-2.5 text-sm font-medium rounded-r-md transition-all duration-150`}
                     >
                       <span className="mr-3 text-base">{item.icon}</span>
