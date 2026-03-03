@@ -7,9 +7,9 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     }
   },
   "scripts": {
@@ -20,11 +20,17 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@latampay/types": "workspace:*"
+    "@latampay/monitoring": "workspace:*",
+    "@latampay/types": "workspace:*",
+    "ethers": "^6.10.0",
+    "eventemitter3": "^5.0.1",
+    "qrcode": "^1.5.3",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@latampay/config": "workspace:*",
     "@types/node": "^20.11.0",
+    "@types/qrcode": "^1.5.5",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
   },
@@ -32,4 +38,3 @@
     "access": "public"
   }
 }
-

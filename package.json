@@ -25,6 +25,10 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@base-org/account": "^2.4.0",
+    "@walletconnect/ethereum-provider": "^2.21.1",
+    "porto": "^0.2.37"
+  }
 }
-

@@ -243,16 +243,17 @@ Hola [Nombre],
 
 Vi que [Agencia] trabaja con clientes en [USA/Europa].
 
-¿Sabes exactamente cuánto pierdes mensualmente en fees de PayPal/Wise?
+¿Cuánto tiempo pierde tu equipo conciliando facturas y persiguiendo pagos cada mes?
 
-Lanzamos una herramienta que:
-→ Emite facturas profesionales
-→ Cobra en USD stablecoin en 1 clic
-→ Reduce fees 60-80% (de 3-5% a 0.3%)
+No somos otra pasarela de pagos (como Binance/Bitso).
+Somos un **Sistema Operativo de Cobranza** que:
+→ Centraliza facturación y cobros en un solo dashboard
+→ Automatiza la conciliación (adiós Excel)
+→ Usa stablecoins solo como riel (rápido/barato)
 
-Creé una calculadora rápida de ahorro. ¿Te interesa ver cuánto podrías ahorrar?
+¿Te interesa ver cómo automatizar tu flujo de caja?
 
-[Link calculadora]
+[Link demo]
 
 Saludos,
 Santiago
@@ -268,41 +269,37 @@ Santiago
 
 **Min 0-2: Discovery**
 
-- "¿Cuánto facturas mensual en USD?"
-- "¿Qué % pierdes en fees actualmente?"
-- "¿Cómo manejas retainers recurrentes?"
+- "¿Cómo llevas el control de quién te ha pagado y quién no?"
+- "¿Cuánto tiempo dedicas a conciliar Excel vs Banco vs Wallet?"
+- "¿Qué pasa cuando un cliente pide factura fiscal?"
 
-**Min 2-5: Demo Live**
+**Min 2-5: Demo Live (Workflow Focus)**
 
-- Crear factura en dashboard
-- Generar payment link
-- Mostrar one-click pay (testnet)
-- Cliente paga en segundos
+- "Este es tu Centro de Comando."
+- Crear factura → Enviar → "El cliente paga en 1 clic"
+- **Magic Moment**: "Mira cómo la factura pasa de 'Pendiente' a 'Pagada' y se genera el asiento contable automáticamente."
 
-**Min 5-7: Value Props**
+**Min 5-7: Value Props (OS vs Riel)**
 
-- Dashboard: "Aquí ves todos tus pagos"
-- Fiscal: "Auto-calcula IVA/retención"
-- Export: "CSV listo para tu contador"
+- "Binance es solo el banco. Nosotros somos tu departamento de finanzas."
+- "Trazabilidad total: desde el invoice hasta el settlement."
+- "Fiscal ready: Tu contador entra aquí y descarga todo."
 
-**Min 7-9: Savings Calculator**
+**Min 7-9: Savings (Time > Money)**
 
-- "Con tu volumen de $50K/mes:"
-- "PayPal: $1,500 fees (3%)"
-- "LatamPay: $150 fees (0.3%)"
-- "**Ahorras $1,350/mes = $16,200/año**"
+- "Ahorras fees (0.3% vs 3%), sí."
+- "Pero lo importante: Ahorras 10 horas/mes de gestión manual."
+- "**Tu hora vale $100. Te ahorramos $1,000/mes en tiempo.**"
 
 **Min 9-11: Next Features**
 
-- Suscripciones (si ya implementado)
-- Analytics retención (roadmap)
-- White-label (enterprise)
+- Suscripciones (Cobro automático)
+- Nómina (Pagar a tu equipo desde aquí)
 
 **Min 11-12: CTA**
 
-- "¿Te gustaría probarlo?"
-- "Trial 14 días, creas tu primera factura ahora"
-- "Te acompaño en el setup"
+- "¿Quieres poner orden en tu facturación hoy?"
+- "Te ayudo a migrar tu primer cliente ahora mismo."
 
 ### Email Nurture Sequence
 

@@ -1,20 +1,29 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
-import {Pausable} from "@openzeppelin/contracts/utils/Pausable.sol";
-import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
-import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-import {ILatamPayGateway, ILatamPayGateway.Payment as Payment} from "./interfaces/ILatamPayGateway.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/Pausable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title LatamPayGateway
- * @notice Pasarela de pagos para procesar pagos en stablecoins soportadas (USDC / USDT) con cobro de fees.
- * @dev Incluye protecciones contra reentrancia, pausas de emergencia y validaciones exhaustivas.
+ * @notice Payment gateway for stablecoin payments with EIP-2612 permit support
+ * @dev Non-custodial: funds go directly merchant → no TVL
  */
-contract LatamPayGateway is ILatamPayGateway, Ownable, Pausable, ReentrancyGuard {
+contract LatamPayGateway is ReentrancyGuard, Pausable, Ownable {
     using SafeERC20 for IERC20;
+
+    struct Payment {
+        address merchant;
+        address token;
+        uint96 amount;
+        bool completed;
+        uint64 createdAt;
+        uint64 expiresAt;
+    }
 
     /// @dev Basis points cobrados como fee (0.3%).
     uint256 public constant FEE_BPS = 30;
@@ -139,8 +148,18 @@ contract LatamPayGateway is ILatamPayGateway, Ownable, Pausable, ReentrancyGuard
      * @notice Ejecuta el pago de un intento previamente creado.
      * @dev Debe existir, no estar completado y contar con allowance del pagador.
      * @param paymentId Identificador del pago a ejecutar.
+     * @param deadline Deadline for the permit signature.
+     * @param v V component of the permit signature.
+     * @param r R component of the permit signature.
+     * @param s S component of the permit signature.
      */
-    function pay(bytes32 paymentId) external whenNotPaused nonReentrant {
+    function pay(
+        bytes32 paymentId,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) external whenNotPaused nonReentrant {
         Payment storage payment = payments[paymentId];
         if (payment.merchant == address(0)) {
             revert PaymentNotFound(paymentId);
@@ -165,6 +184,18 @@ contract LatamPayGateway is ILatamPayGateway, Ownable, Pausable, ReentrancyGuard
         uint256 netAmount = grossAmount - feeAmount;
 
         address payer = msg.sender;
+        
+        // Execute Permit
+        try IERC20Permit(token).permit(payer, address(this), grossAmount, deadline, v, r, s) {
+            // Permit successful
+        } catch {
+            // If permit fails, we assume allowance was already set or token doesn't support permit in a standard way
+            // But for this specific implementation, we want to enforce Permit usage or at least attempt it.
+            // However, to be safe and allow standard approve flow if signature is empty/invalid but allowance exists:
+            // We could check allowance. But the requirement is "One-Click Pay", so we prioritize Permit.
+            // For now, we will just proceed. If permit failed and no allowance, transferFrom will fail.
+        }
+
         IERC20 erc20 = IERC20(token);
 
         erc20.safeTransferFrom(payer, treasury, feeAmount);

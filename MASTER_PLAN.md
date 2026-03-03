@@ -27,12 +27,12 @@ Este documento integra:
 
 | Dimensión            | Antes | Después  | Delta  | Justificación                  |
 | -------------------- | ----- | -------- | ------ | ------------------------------ |
-| **Problema**         | 9/10  | 9/10     | 0      | Pain real validado             |
-| **Solución Técnica** | 7/10  | 7/10     | 0      | Stack sólido, ejecutar bien    |
-| **Diferenciación**   | 4/10  | **7/10** | **+3** | Modelo multi-capa + fiscal     |
-| **Modelo Negocio**   | 3/10  | **8/10** | **+5** | SaaS + Variable + Add-ons      |
-| **Go-to-Market**     | 2/10  | **7/10** | **+5** | ICP + Playbook + DPs           |
-| **Moat Defensible**  | 3/10  | **6/10** | **+3** | Sticky features + integración  |
+| **Problema**         | 9/10  | 9/10     | 0      | Caos administrativo > Fees altos |
+| **Solución Técnica** | 7/10  | 8/10     | +1     | OS completo vs Gateway simple  |
+| **Diferenciación**   | 4/10  | **9/10** | **+5** | Infraestructura vs Commodity   |
+| **Modelo Negocio**   | 3/10  | **8/10** | **+5** | SaaS (OS) + Variable (Riel)    |
+| **Go-to-Market**     | 2/10  | **7/10** | **+5** | Venta de Eficiencia vs Ahorro  |
+| **Moat Defensible**  | 3/10  | **8/10** | **+5** | Workflow Lock-in (Data/Fiscal) |
 | **Escala Potencial** | 5/10  | **7/10** | **+2** | Unit economics + partnerships  |
 | **Ejecución**        | 4/10  | **6/10** | **+2** | Roadmap + metrics + disciplina |
 
@@ -40,9 +40,9 @@ Este documento integra:
 
 ```
 Antes:  (9+7+4+3+2+3+5+4) / 8 = 4.6/10
-Después: (9+7+7+8+7+6+7+6) / 8 = 7.1/10
+Después: (9+8+9+8+7+8+7+6) / 8 = 7.75/10
 
-Con ejecución perfecta: 8.0/10 ✅
+Con ejecución perfecta: 8.5/10 ✅
 ```
 
 ---
@@ -543,11 +543,11 @@ Este plan transforma **riesgos en acciones**:
 
 | Riesgo Original                     | Acción Transformadora                             |
 | ----------------------------------- | ------------------------------------------------- |
-| "Márgenes microscópicos"            | Modelo multi-capa SaaS + Add-ons                  |
-| "Sin propuesta valor clara"         | ICP ultra-específico + diferenciación fiscal      |
-| "Backend centralizado problemático" | Justificado por UX + roadmap descentralización V4 |
-| "Solo Polygon"                      | Validar PMF primero, multi-chain V3+              |
-| "Sin red efectos"                   | Design Partners → Casos éxito → Referral loop     |
+| "Márgenes microscópicos"            | Modelo OS (SaaS) + Riel (Variable)                |
+| "Sin propuesta valor clara"         | "Sistema Operativo" vs "Pasarela de Pagos"        |
+| "Backend centralizado problemático" | Justificado: El valor es la data/UX, no el riel   |
+| "Solo Polygon"                      | Irrelevante: El cliente compra orden, no la chain |
+| "Sin red efectos"                   | Workflow Lock-in → Costo de salida alto           |
 | "Monetización incierta"             | Unit economics 20:1 LTV:CAC                       |
 | "GTM sin definir"                   | Playbook completo con funnel cuantificado         |
 | "Complejidad ejecución"             | Versioning anti-sprawl V0-V4                      |

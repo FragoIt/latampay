@@ -1,12 +1,15 @@
+// Re-export types
 export * from '@latampay/types';
+export * from './types/config';
+export * from './types/payment';
+export * from './types/sdk-errors';
+export * from './constants/contracts';
 
-// SDK implementation will go here
-export class LatamPaySDK {
-  constructor(private apiKey: string) {}
+// Export main class
+export { LatamPay } from './LatamPay';
 
-  // Placeholder methods
-  async initialize() {
-    return { success: true };
-  }
-}
+// Export utilities
+export { supportsPermit, signPermit } from './utils/permit';
+export { validateToken, normalizeToken, preFlightCheck } from './utils/validation';
+export { retryWithBackoff } from './utils/retry';
 
